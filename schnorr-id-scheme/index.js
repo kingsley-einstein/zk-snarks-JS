@@ -68,43 +68,6 @@ function _e(t) {
   return bigInt.randBetween(bigInt.zero, bigInt[2].pow(t.minus(bigInt.one)));
 }
 
-// /**
-//  * 
-//  * @param {BigNumber} p 
-//  * @param {BigNumber} q 
-//  */
-// function _a(p, q) {
-//   let a = BigNumber(0);
-
-//   while (a.eq(0) || (a.pow(q).modulo(p)).gt(1) || (a.pow(q).modulo(p)).lt(1)) {
-//     a = BigNumber(Math.floor(Math.random() * 14300));
-//   }
-//   return a;
-// }
-
-// /**
-//  * 
-//  * @param {BigNumber} q 
-//  */
-// function _s(q) {
-//   let s = BigNumber(0);
-
-//   while (s.lte(0) || s.gte(q)) {
-//     s = BigNumber(Math.floor(Math.random() * 25300));
-//   }
-//   return s;
-// }
-
-// /**
-//  * 
-//  * @param {BigNumber} a 
-//  * @param {BigNumber} s 
-//  * @param {BigNumber} q 
-//  */
-// function _v(a, s, q) {
-//   return a.pow(s.multipliedBy(-1)).modulo(q);
-// }
-
 
 // Global variables
 const p = _p();
