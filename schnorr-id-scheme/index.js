@@ -20,7 +20,7 @@ function _p() {
   let p = bigInt.zero;
 
   while (!_isPrime(p)) {
-    p = bigInt.randBetween(bigInt(2).pow(bigInt[4]), bigInt(2).pow(bigInt[8]));
+    p = bigInt.randBetween(bigInt(2).pow(bigInt[4]), bigInt(2).pow(bigInt[10]));
   }
   return p;
 }
@@ -71,36 +71,36 @@ function _e(t) {
 
 // Global variables
 const p = _p();
-console.log("p => ", p.toString());
+console.log("p => ", p.toString(16));
 
 const q = _q(p);
-console.log("q => ", q.toString());
+console.log("q => ", q.toString(16));
 
 const g = _g(q);
-console.log("g => ", g.toString());
+console.log("g => ", g.toString(16));
 
 const t = _t(q);
-console.log("t => ", t.toString());
+console.log("t => ", t.toString(16));
 
 const x = bigInt.randBetween(bigInt.zero, q.minus(bigInt.one));
-console.log("x => ", x.toString());
+console.log("x => ", x.toString(16));
 
 const y = g.pow(q.minus(x)).mod(p);
-console.log("y => ", y.toString());
+console.log("y => ", y.toString(16));
 
 const c = bigInt.randBetween(bigInt.zero, q.minus(bigInt.one));
-console.log("c => ", c.toString());
+console.log("c => ", c.toString(16));
 
 const w = g.pow(c).mod(p);
-console.log("w => ", w.toString());
+console.log("w => ", w.toString(16));
 
 const e = _e(t);
-console.log("e => ", e.toString());
+console.log("e => ", e.toString(16));
 
 const s = c.plus(x.times(e)).mod(q);
-console.log("s => ", s.toString());
+console.log("s => ", s.toString(16));
 
 const W = g.pow(s).times(y.pow(e)).mod(p);
-console.log("W => ", W.toString());
+console.log("W => ", W.toString(16));
 
 console.log("Verified => ", w.equals(W));
